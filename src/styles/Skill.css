@@ -1,0 +1,113 @@
+.myskill {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+  min-height: unset;
+
+  margin-top: 100px;
+  padding: 0 1%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+/* Nhân vật chính giữa */
+.skil_img {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  z-index: 2;
+}
+
+.skil_img img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* Khu vực chứa icon */
+.logo_skill {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+/* Icon */
+.logo_skill img {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.35s ease;
+}
+
+/* Photoshop - trên trái */
+.logo_skill img:nth-child(1) {
+  top: 24%;
+  left: 27%;
+}
+
+/* Illustrator - giữa phải */
+.logo_skill img:nth-child(2) {
+  top: 40%;
+  right: 26%;
+  width: 70px;
+}
+
+/* Storyline - dưới trái */
+.logo_skill img:nth-child(3) {
+  bottom: 20%;
+  left: 29%;
+  width: 50px;
+  height: auto;
+  border-radius: 7px;
+}
+.logo_skill img:nth-child(4) {
+  bottom: 20%;
+  right: 29%;
+}
+.logo_skill img:nth-child(5) {
+  bottom: 35%;
+  right: 27%;
+}
+.logo_skill img:nth-child(6) {
+  bottom: 33%;
+  left: 25%;
+  width: 80px;
+  height: auto;
+}
+.logo_skill img:nth-child(7) {
+  bottom: 50%;
+  left: 24%;
+  border-radius: 7px;
+  width: 50px;
+  height: auto;
+}
+.logo_skill img:nth-child(8) {
+  top: 25%;
+  right: 30%;
+  width: 60px;
+  height: auto;
+}
+
+/* Hover */
+.logo_skill img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 8px 15px rgba(168, 85, 247, 0.5));
+}

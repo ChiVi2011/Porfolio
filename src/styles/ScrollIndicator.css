@@ -1,0 +1,61 @@
+.ScrollIndicator {
+  position: fixed !important;
+  left: 50vw !important;
+  right: auto !important;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  margin: 0;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #7c3aed;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 17px;
+  box-sizing: border-box;
+}
+
+.mouseDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #b04cf5;
+  animation: mouseScroll 1.6s ease-in-out infinite;
+}
+
+@keyframes mouseScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 100;
+  }
+
+  70% {
+    transform: translateY(7px);
+    opacity: 100;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100;
+  }
+}
+
+.scrollIndicator:hover .mouse {
+  border-color: #b04cf5;
+  transition: border-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mouseDot {
+    animation: none;
+  }
+}

@@ -1,0 +1,113 @@
+.homeContainer {
+  margin: 0 auto;
+  height: calc(100vh - 100px);
+}
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0px 1%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.homeIntro {
+  grid-column: 1;
+  justify-self: center;
+  z-index: 2;
+}
+.homeIntro h2 {
+  margin: 0;
+  font-size: clamp(50px, 3.5vw, 72px);
+  font-weight: 800;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #7c3aed, #b04cf5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.homeIntro p {
+  margin-bottom: 12px;
+  font-size: 26px;
+  color: #625b70;
+}
+.image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 95%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+.characterAtropos {
+  width: auto;
+  height: 90%;
+  overflow: visible;
+}
+
+.characterAtropos .atropos-inner {
+  overflow: visible;
+  height: 100%;
+}
+
+.characterAtropos img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
+}
+.image::before {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.22) 0%,
+    rgba(124, 58, 237, 0.12) 38%,
+    rgba(124, 58, 237, 0.04) 62%,
+    transparent 75%
+  );
+
+  filter: blur(35px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.homeTitleJob {
+  grid-column: 3;
+  justify-self: center;
+  width: 100%;
+  padding-left: 40px;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.homeTitleJob h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.5;
+  text-align: center;
+  background: linear-gradient(90deg, #7c3aed, #b04cf5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
