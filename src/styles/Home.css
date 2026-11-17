@@ -93,16 +93,17 @@
   grid-column: 3;
   justify-self: center;
   width: 100%;
-  padding-left: 40px;
+  /* padding-left: 1px; */
   z-index: 2;
   user-select: none;
   -webkit-user-select: none;
+  overflow: hidden;
 }
 
 .homeTitleJob h2 {
   margin: 0;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 60px;
   line-height: 1.5;
   text-align: center;
   background: linear-gradient(90deg, #7c3aed, #b04cf5);

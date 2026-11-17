@@ -3,14 +3,26 @@ import Img5 from "../assets/5.png";
 import "../styles/Home.css";
 import Atropos from "atropos/react";
 import "atropos/css";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import Waves from "../components/Waves/Waves";
+import { useState, useEffect } from "react";
 export default function Home() {
   const jobTile = [
     { tile: "Frontend Developer" },
     { tile: "UI/UX Designer" },
     { tile: "E-Learning Specialist" },
   ];
+
+  // Tạo biến thiết lập amination text jobs
+  const [activeJob, setActiveJob] = useState(0);
+  // Set thời gian xuất hiện tilte Job
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveJob((prev) => (prev + 1) % jobTile.length);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [activeJob, jobTile.length]);
   return (
     <>
       <div className="homeContainer">
@@ -63,9 +75,29 @@ export default function Home() {
             </div>
 
             <div className="homeTitleJob">
-              {jobTile.map((item) => (
-                <h2 key={item.tile}>{item.tile}</h2>
-              ))}
+              <AnimatePresence mode="wait">
+                <motion.h2
+                  key={activeJob}
+                  initial={{
+                    opacity: 0,
+                    y: "100%",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: "0%",
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: "-100%",
+                  }}
+                  transition={{
+                    duration: 0.55,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {jobTile[activeJob].tile}
+                </motion.h2>
+              </AnimatePresence>
             </div>
           </section>
         </motion.section>
