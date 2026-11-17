@@ -116,7 +116,7 @@
    TABLET
 ========================= */
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .homeIntro h2 {
     font-size: clamp(35px, 3.5vw, 65px);
   }

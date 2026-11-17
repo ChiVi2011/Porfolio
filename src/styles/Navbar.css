@@ -86,7 +86,7 @@
    TABLET
 ========================= */
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .navbar {
     padding: 12px;
     gap: 30px;
